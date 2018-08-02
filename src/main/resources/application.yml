@@ -9,7 +9,7 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: io.github.forezp.entity
+  typeAliasesPackage: io.github.forezp.modules.*.entity
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
     id-type: 0
@@ -27,7 +27,7 @@ mybatis-plus:
     logic-delete-value: -1
     logic-not-delete-value: 0
     #自定义填充策略接口实现
-    #meta-object-handler: com.baomidou.springboot.xxx
+    meta-object-handler: io.github.forezp.config.MybatisPlusConfig
     #自定义SQL注入器
     sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
   configuration:
