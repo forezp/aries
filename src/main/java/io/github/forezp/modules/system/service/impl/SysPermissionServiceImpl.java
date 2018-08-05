@@ -6,6 +6,8 @@ import io.github.forezp.modules.system.service.SysPermissionService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -17,4 +19,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, SysPermission> implements SysPermissionService {
 
+
+    @Override
+    public List<String> selectUserPermissons(String userId) {
+       return this.baseMapper.selectUserPermissons(userId);
+    }
 }

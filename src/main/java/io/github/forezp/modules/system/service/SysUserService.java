@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface SysUserService extends IService<SysUser> {
 
+
+
 }

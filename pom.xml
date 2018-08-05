@@ -26,6 +26,7 @@
 		<mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
 		<mybatisplus.version>2.2.0</mybatisplus.version>
 		<mysql.version>5.1.38</mysql.version>
+		<swagger.version>2.7.0</swagger.version>
 	</properties>
 
 	<dependencies>
@@ -81,7 +82,25 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- MP 核心库 -->
+		<!--swagger-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+
+		<!--工具类-->
+		<dependency>
+			<groupId>io.github.forezp</groupId>
+			<artifactId>scrorpio</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 
 
 

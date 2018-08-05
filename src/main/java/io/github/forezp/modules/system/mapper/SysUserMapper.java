@@ -2,6 +2,7 @@ package io.github.forezp.modules.system.mapper;
 
 import io.github.forezp.modules.system.entity.SysUser;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @author forezp
  * @since 2018-08-02
  */
+@Mapper
 public interface SysUserMapper extends BaseMapper<SysUser> {
 
 
