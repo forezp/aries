@@ -6,4 +6,5 @@ package io.github.forezp.common.constant;
  */
 public class OrderConstants {
 
+    public static final int PERMISSION_ORDOR=1;
 }
