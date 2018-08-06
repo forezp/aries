@@ -12,6 +12,7 @@ import io.github.forezp.permission.whiteurl.WhiteUrlFinder;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -28,8 +29,8 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class PermissionAspect implements Ordered {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
@@ -45,12 +46,12 @@ public class PermissionAspect implements Ordered {
 
     }
 
-    @Before("permissionPointCut()")
-    public void before(ProceedingJoinPoint point) throws Throwable {
+    @Around("permissionPointCut()")
+    public Object before(ProceedingJoinPoint point) throws Throwable {
         //去掉白名单
         String uri = HttpUtils.getHttpServletRequest().getRequestURI();
         if (whiteUrlFinder.isWhiteUrl(uri)) {
-            return;
+            return point.proceed();
         }
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
@@ -62,6 +63,8 @@ public class PermissionAspect implements Ordered {
 
             }
         }
+
+        return point.proceed();
     }
 
 
