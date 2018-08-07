@@ -3,10 +3,7 @@ package io.github.forezp.permission.auth;
 
 import io.github.forezp.common.util.HttpUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
