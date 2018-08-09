@@ -7,9 +7,31 @@ import java.util.List;
  */
 public interface PermissionManager {
 
-    void store(String userId, List<String> permissions);
+    /**
+     * 从数据库中拖出权限
+     * @param userId
+     * @return
+     */
+    List<String> fetch(String userId);
 
+    /**
+     * 从PermissionManager获取权限
+     * @param userId
+     * @return
+     */
     List<String> getPermissions(String userId);
 
+    /**
+     * 从缓存中获取权限
+     * @param userId
+     * @param permissions
+     */
+    void cache(String userId, List<String> permissions);
+
+
+    /**
+     * 主动使缓存的权限失效
+     * @param userId
+     */
     void expirePermission(String userId);
 }

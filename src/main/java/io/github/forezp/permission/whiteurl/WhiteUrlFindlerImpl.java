@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Created by forezp on 2018/8/5.
@@ -21,20 +22,35 @@ public class WhiteUrlFindlerImpl implements WhiteUrlFinder, InitializingBean {
     @Value("${permission.whiteurls:}")
     String whiteurls;
 
-    List<String> whiteurlsList = new ArrayList<>();
+    List<String> list = new ArrayList<>();
 
     @Override
     public boolean isWhiteUrl(String url) {
-        if (whiteurlsList.contains(url)) {
+        if (list.contains(url)) {
             return true;
+        }
+        for (int i = 0; i < list.size(); i++) {
+            String pattern = list.get(i);
+            boolean isMatch = Pattern.matches(pattern, url);
+            if (isMatch) {
+                return true;
+            }
         }
         return false;
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        if (StringUtils.isNoneBlank(whiteurls)) {
-            whiteurlsList = Arrays.asList(whiteurls.split(COMMA));
+        //swagger相关的直接放行
+        list.add(".*webjars.*");
+        list.add(".*swagger.*");
+        list.add(".*api-docs.*");
+        if (StringUtils.isNotEmpty(whiteurls)) {
+            String[] whiteUrlArray = whiteurls.split(COMMA);
+            for (String url : whiteUrlArray) {
+                list.add(url);
+            }
+
         }
     }
 }

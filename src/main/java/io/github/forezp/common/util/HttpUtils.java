@@ -52,7 +52,9 @@ public class HttpUtils {
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < varr.length; i++) {
                 String var = varr[i];
-                if (i != 0) builder.append(",");
+                if (i != 0) {
+                    builder.append(",");
+                }
                 builder.append(var);
             }
             param.put(key, builder.toString());
@@ -108,8 +110,9 @@ public class HttpUtils {
      */
     public static String getIpAddress() {
         // 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址
-      return getIpAddress(getHttpServletRequest());
+        return getIpAddress(getHttpServletRequest());
     }
+
     /**
      * web应用绝对路径
      *

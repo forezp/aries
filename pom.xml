@@ -27,6 +27,11 @@
 		<mybatisplus.version>2.2.0</mybatisplus.version>
 		<mysql.version>5.1.38</mysql.version>
 		<swagger.version>2.7.0</swagger.version>
+		<scrorpio.version>1.0.1</scrorpio.version>
+		<velocity.version>2.0</velocity.version>
+		<freemaker.version>2.3.23</freemaker.version>
+		<jjwt.version>0.7.0</jjwt.version>
+		<lombok.version>1.16.18</lombok.version>
 	</properties>
 
 	<dependencies>
@@ -70,7 +75,7 @@
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity-engine-core</artifactId>
-			<version>2.0</version>
+			<version>${velocity.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -78,7 +83,7 @@
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
-			<version>2.3.23</version>
+			<version>${freemaker.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -98,14 +103,21 @@
 		<dependency>
 			<groupId>io.github.forezp</groupId>
 			<artifactId>scrorpio</artifactId>
-			<version>1.0.0</version>
+			<version>${scrorpio.version}</version>
 		</dependency>
 
 		<!--jwt-->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
-			<version>0.7.0</version>
+			<version>${jjwt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 	</dependencies>

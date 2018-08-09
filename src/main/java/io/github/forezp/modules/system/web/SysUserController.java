@@ -20,7 +20,7 @@ import java.util.List;
  * @since 2018-08-03
  */
 @RestController
-@RequestMapping("/sysUser")
+@RequestMapping("/user")
 public class SysUserController {
 
     @Autowired

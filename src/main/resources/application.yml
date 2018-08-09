@@ -35,6 +35,8 @@ mybatis-plus:
     cache-enabled: false
     call-setters-on-nulls: true
 
+permission.whiteurls: /user/login
+
 
 
 

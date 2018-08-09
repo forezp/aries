@@ -21,24 +21,28 @@ import java.util.List;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    private static final String TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJEU1NGQVdEV0FEQVMuLi4iLCJzdWIiOiJ1c2VybmFtZSIsInVzZXJfbmFtZSI6ImFkbWluIiwibmlja19uYW1lIjoiREFTREExMjEiLCJleHAiOjE1MzM4Njc5ODYsImlhdCI6MTUzMzgyNDc4NiwianRpIjoidXNlcklkIn0.lnVRr8ZgeGrGy1-moE8iUfJaqjLR9jR1sEHEJiX6meY";
 
-    /**
-     * 全局参数
-     *
-     * @return
-     */
+
     private List<Parameter> parameter() {
         List<Parameter> params = new ArrayList<>();
         params.add(new ParameterBuilder().name("Authorization")
                 .description("Authorization Bearer token")
                 .modelRef(new ModelRef("string"))
                 .parameterType("header")
+                .defaultValue(TOKEN)
                 .required(false).build());
         return params;
     }
 
     @Bean
     public Docket sysApi() {
+
+//        ParameterBuilder tokenPar = new ParameterBuilder();
+//        List<Parameter> pars = new ArrayList<Parameter>();
+//        tokenPar.name("Authorization").description("令牌").defaultValue(TOKEN).modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+//        pars.add(tokenPar.build());
+
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()

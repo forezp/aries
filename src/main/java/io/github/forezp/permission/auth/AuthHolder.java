@@ -1,21 +1,23 @@
 package io.github.forezp.permission.auth;
 
+import io.jsonwebtoken.Claims;
+
 /**
  * Created by forezp on 2018/8/6.
  */
 public class AuthHolder {
 
-    private static ThreadLocal<String> currentUser = new ThreadLocal<>();
+    private static ThreadLocal<Claims> claimsThreadLocal = new ThreadLocal<>();
 
-    public static void setCurrentUser(String userId) {
-        currentUser.set(userId);
+    public static void set(Claims claims) {
+        claimsThreadLocal.set(claims);
     }
 
-    public static String getCurrentUser() {
-        return currentUser.get();
+    public static Claims get() {
+        return claimsThreadLocal.get();
     }
 
-    public static void removeCurrentUser() {
-        currentUser.remove();
+    public static void remove() {
+        claimsThreadLocal.remove();
     }
 }
