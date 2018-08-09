@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.github.forezp.common.constant.JWTConstant.SALT_KEY;
+import static io.github.forezp.common.constant.JWTConstants.SALT_KEY;
 
 /**
  * Created by forezp on 2018/8/7.

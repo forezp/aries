@@ -1,7 +1,7 @@
 package io.github.forezp.modules.system.web;
 
 
-import io.github.forezp.common.constant.JWTConstant;
+import io.github.forezp.common.constant.JWTConstants;
 import io.github.forezp.common.dto.RespDTO;
 import io.github.forezp.common.util.JWTUtils;
 import io.github.forezp.modules.system.entity.SysUser;
@@ -40,7 +40,7 @@ public class SysUserController {
         String jwt = null;
 
         try {
-            jwt = JWTUtils.createJWT("userId", "username", JWTConstant.HALF_DAY);
+            jwt = JWTUtils.createJWT("userId", "username", JWTConstants.HALF_DAY);
         } catch (Exception e) {
             e.printStackTrace();
         }

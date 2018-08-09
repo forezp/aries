@@ -15,14 +15,20 @@ public interface PermissionManager {
     List<String> fetch(String userId);
 
     /**
+     * 拖出权限并缓存
+     * @param userId
+     */
+    void fetchAndCache(String userId);
+
+    /**
      * 从PermissionManager获取权限
      * @param userId
      * @return
      */
-    List<String> getPermissions(String userId);
+    List<String> get(String userId);
 
     /**
-     * 从缓存中获取权限
+     * 缓存权限
      * @param userId
      * @param permissions
      */
@@ -33,5 +39,5 @@ public interface PermissionManager {
      * 主动使缓存的权限失效
      * @param userId
      */
-    void expirePermission(String userId);
+    void expire(String userId);
 }
