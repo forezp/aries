@@ -15,6 +15,10 @@
 *.iws
 *.iml
 *.ipr
+.mvn
+aries.iml
+mvnw
+.DS_Store
 
 ### NetBeans ###
 /nbproject/private/
