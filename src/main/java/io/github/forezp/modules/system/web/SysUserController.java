@@ -40,7 +40,7 @@ public class SysUserController {
         String jwt = null;
 
         try {
-            jwt = JWTUtils.createJWT("userId", "username", JWTConstants.HALF_DAY);
+            jwt = JWTUtils.createJWT("userId", "username",599999999L);
         } catch (Exception e) {
             e.printStackTrace();
         }

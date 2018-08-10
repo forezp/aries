@@ -45,6 +45,7 @@ public class WhiteUrlFindlerImpl implements WhiteUrlFinder, InitializingBean {
         list.add(".*webjars.*");
         list.add(".*swagger.*");
         list.add(".*api-docs.*");
+        list.add(".*druid.*");
         if (StringUtils.isNotEmpty(whiteurls)) {
             String[] whiteUrlArray = whiteurls.split(COMMA);
             for (String url : whiteUrlArray) {
@@ -53,4 +54,6 @@ public class WhiteUrlFindlerImpl implements WhiteUrlFinder, InitializingBean {
 
         }
     }
+
+
 }

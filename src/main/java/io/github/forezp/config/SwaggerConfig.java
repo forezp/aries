@@ -21,9 +21,7 @@ import java.util.List;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private static final String TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJEU1NGQVdEV0FEQVMuLi4iLCJzdWIiOiJ1c2VybmFtZSIsInVzZXJfbmFtZSI6ImFkbWluIiwibmlja19uYW1lIjoiREFTREExMjEiLCJleHAiOjE1MzM4Njc5ODYsImlhdCI6MTUzMzgyNDc4NiwianRpIjoidXNlcklkIn0.lnVRr8ZgeGrGy1-moE8iUfJaqjLR9jR1sEHEJiX6meY";
-
-
+    private static final String TOKEN = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJEU1NGQVdEV0FEQVMuLi4iLCJzdWIiOiJ1c2VybmFtZSIsInVzZXJfbmFtZSI6ImFkbWluIiwibmlja19uYW1lIjoiREFTREExMjEiLCJleHAiOjE1MzM5NTM3MjEsImlhdCI6MTUzMzkxMDUyMSwianRpIjoidXNlcklkIn0.WJBnC_Tk1bAiHaOi80TxCk0jJIHU-wLyjd6S96OqPJU";
     private List<Parameter> parameter() {
         List<Parameter> params = new ArrayList<>();
         params.add(new ParameterBuilder().name("Authorization")
