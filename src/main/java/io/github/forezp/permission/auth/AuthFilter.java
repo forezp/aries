@@ -32,7 +32,7 @@ public class AuthFilter implements Filter {
     private static final String AUTH = "authorization";
     private static final String BIG_AUTH = "Authorization";
     private static final String BEARER = "Bearer ";
-    private static final String ERROR_MSG = "{\"code\":\"1\",\"msg\":\"you have no permission\"}";
+    private static final String ERROR_MSG = "{\"code\":\"1\",\"msg\":\"you have no permission to access\"}";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

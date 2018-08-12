@@ -5,6 +5,12 @@ spring:
   profiles:
     active: dev
 
+  redis:
+    host: localhost
+   # password:
+    database: 1
+    timeout: 0
+
 #mybatis
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml

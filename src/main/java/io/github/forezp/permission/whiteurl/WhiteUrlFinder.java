@@ -5,5 +5,5 @@ package io.github.forezp.permission.whiteurl;
  */
 public interface WhiteUrlFinder {
 
-    public boolean isWhiteUrl(String url);
+    boolean isWhiteUrl(String url);
 }
