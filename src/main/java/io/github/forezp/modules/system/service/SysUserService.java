@@ -1,5 +1,6 @@
 package io.github.forezp.modules.system.service;
 
+import io.github.forezp.common.dto.PageResultsDTO;
 import io.github.forezp.modules.system.entity.SysUser;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -13,6 +14,8 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface SysUserService extends IService<SysUser> {
 
+    PageResultsDTO searchUsers(int page, int pageSize);
 
+    SysUser login(String username, String password);
 
 }

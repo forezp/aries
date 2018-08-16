@@ -6,10 +6,11 @@ package io.github.forezp.common.exception;
  */
 public enum ErrorCode {
 
-    OK(0, ""),
-    FAIL(-1, "操作失败");
-
-
+    OK( 0, "" ),
+    FAIL( -1, "操作失败" ),
+    ERROR_ARGS( 2, "参数不符合要求" ),
+    USER_NOT_EXIST(3, "该用户不存在");
+    ;
 
 
     private int code;
