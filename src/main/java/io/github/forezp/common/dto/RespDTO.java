@@ -7,7 +7,7 @@ public class RespDTO<T> implements Serializable{
 
 
     public int code = 0;
-    public String error = "";
+    public String message = "";
     public T data;
 
     public static RespDTO onSuc(Object data) {
@@ -20,7 +20,7 @@ public class RespDTO<T> implements Serializable{
     public String toString() {
         return "RespDTO{" +
                 "code=" + code +
-                ", error='" + error + '\'' +
+                ", error='" + message + '\'' +
                 ", data=" + data +
                 '}';
     }

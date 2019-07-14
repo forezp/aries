@@ -8,9 +8,12 @@ public enum ErrorCode {
 
     OK( 0, "" ),
     FAIL( -1, "操作失败" ),
-    ERROR_ARGS( 2, "参数不符合要求" ),
-    USER_NOT_EXIST(3, "该用户不存在");
+    ERROR_ARGS( 1002, "参数不符合要求" ),
+    USER_NOT_EXIST(1003, "该用户不存在"),
+    PWD_ERROR(1004,"用户密码错误"),
+    TOKEN_ISNULL(1005,"用户的token为空")
     ;
+
 
 
     private int code;

@@ -25,9 +25,9 @@ public class JWTUtils {
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
         Map<String,Object> claims = new HashMap<String,Object>();//创建payload的私有声明（根据特定的业务需要添加，如果要拿这个做验证，一般是需要和jwt的接收方提前沟通好验证方式的）
-        claims.put("uid", "DSSFAWDWADAS...");
-        claims.put("user_name", "admin");
-        claims.put("nick_name","DASDA121");
+//        claims.put("uid", "DSSFAWDWADAS...");
+//        claims.put("user_name", "admin");
+//        claims.put("nick_name","DASDA121");
         SecretKey key = generalKey();//生成签名的时候使用的秘钥secret,这个方法本地封装了的，一般可以从本地配置文件中读取，切记这个秘钥不能外露哦。它就是你服务端的私钥，在任何场景都不应该流露出去。一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
         //下面就是在为payload添加各种标准声明和私有声明了
         JwtBuilder builder = Jwts.builder() //这里其实就是new一个JwtBuilder，设置jwt的body
@@ -67,10 +67,7 @@ public class JWTUtils {
 //        JWTUtils util=   new JWTUtils();
 //        String ab=util.createJWT("jwt", "{id:100,name:xiaohong}", 600000);
 //        System.out.println(ab);
-//        //eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJEU1NGQVdEV0FEQVMuLi4iLCJzdWIiOiJ7aWQ6MTAwLG5hbWU6eGlhb2hvbmd9IiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiJEQVNEQTEyMSIsImV4cCI6MTUxNzgzNTE0NiwiaWF0IjoxNTE3ODM1MDg2LCJqdGkiOiJqd3QifQ.ncVrqdXeiCfrB9v6BulDRWUDDdROB7f-_Hg5N0po980
-//        String jwt="eyJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJEU1NGQVdEV0FEQVMuLi4iLCJzdWIiOiJ7aWQ6MTAwLG5hbWU6eGlhb2hvbmd9IiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiJEQVNEQTEyMSIsImV4cCI6MTUzMzY1NDA0NiwiaWF0IjoxNTMzNjUzNDQ2LCJqdGkiOiJqd3QifQ.nHNy7DjwWgzElcrtm9blYDpJ_XkL9-H-QQUk5bDwpX8";
-//
-//
+//        String jwt="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7aWQ6MTAwLG5hbWU6eGlhb2hvbmd9IiwiZXhwIjoxNTYzMDkxMTM3LCJpYXQiOjE1NjMwOTA1MzcsImp0aSI6Imp3dCJ9.pyJF1pA824vTWqrfdam298mC47P8em8ndZG5AYwu28U";
 //        Claims c=util.parseJWT(jwt);//注意：如果jwt已经过期了，这里会抛出jwt过期异常。
 //        System.out.println(c.getId());//jwt
 //        System.out.println(c.getIssuedAt());//Mon Feb 05 20:50:49 CST 2018

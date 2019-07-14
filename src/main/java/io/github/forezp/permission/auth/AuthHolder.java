@@ -1,19 +1,20 @@
 package io.github.forezp.permission.auth;
 
-import io.jsonwebtoken.Claims;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by forezp on 2018/8/6.
  */
 public class AuthHolder {
 
-    private static ThreadLocal<Claims> claimsThreadLocal = new ThreadLocal<>();
+    private static ThreadLocal<HttpServletRequest> claimsThreadLocal = new ThreadLocal<>();
 
-    public static void set(Claims claims) {
-        claimsThreadLocal.set(claims);
+    public static void set(HttpServletRequest httpServletRequest) {
+        claimsThreadLocal.set(httpServletRequest);
     }
 
-    public static Claims get() {
+    public static HttpServletRequest get() {
         return claimsThreadLocal.get();
     }
 

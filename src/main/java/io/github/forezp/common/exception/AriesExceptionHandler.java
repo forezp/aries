@@ -28,7 +28,7 @@ public class AriesExceptionHandler {
         RespDTO resp = new RespDTO();
         AriesException taiChiException = (AriesException) e;
         resp.code = taiChiException.getCode();
-        resp.error = e.getMessage();
+        resp.message = e.getMessage();
         //logger.info("user:{} | result: {} ", UserUtils.getCurrentPrinciple(), resp.toString());
         return new ResponseEntity(resp, HttpStatus.OK);
     }
@@ -78,7 +78,7 @@ public class AriesExceptionHandler {
 
         RespDTO resp = new RespDTO();
         resp.code = status.value();
-        resp.error = status.getReasonPhrase();
+        resp.message = status.getReasonPhrase();
         return resp;
     }
 }
